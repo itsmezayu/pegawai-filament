@@ -13,20 +13,32 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class PegawaiResource extends Resource
 {
     protected static ?string $model = Pegawai::class;
 
-    protected static ?string $modelLabel = 'Pegawai';        // "New Pegawai", "Edit Pegawai", dll
+    protected static ?string $modelLabel = 'Pegawai'; // TItle model
 
-    protected static ?string $pluralModelLabel = 'Data Pegawai'; // judul halaman & breadcrumb
+    protected static ?string $pluralModelLabel = 'Data Pegawai'; // Data Pegawai
 
-    protected static ?string $navigationLabel = 'Data Pegawai';  // teks di sidebar kiri
+    protected static ?string $navigationLabel = 'Data Pegawai'; // Label menu
+
+    protected static string|UnitEnum|null $navigationGroup = 'Manajemen'; // Menu Group
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $recordTitleAttribute = 'pegawai';
+    protected static ?string $recordTitleAttribute = 'pegawai'; // Judul record
+
+    public static function getGloballySearchableAttributes(): array // Atribut yang dapat dicari secara global
+    {
+        return [
+            'nama',
+            'nip',
+            'jabatan',
+        ];
+    }
 
     public static function form(Schema $schema): Schema
     {

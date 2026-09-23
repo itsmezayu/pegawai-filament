@@ -9,6 +9,10 @@ class PegawaiPendidikanChart extends ChartWidget
 {
     protected ?string $heading = 'Pendidikan Terakhir';
 
+    protected static ?int $sort = 3; // urutan widget di dashboard
+    protected int | string | array $columnSpan = 1; // lebar di dashboard
+
+
     protected function getData(): array
     {
         $jenjang = ['SD', 'SMP', 'SMA/SMK', 'D3', 'S1', 'S2', 'S3'];
@@ -20,14 +24,15 @@ class PegawaiPendidikanChart extends ChartWidget
                     ->map(fn($j) => Pegawai::where('pendidikan_terakhir', $j)->count())
                     ->toArray(),
                 'backgroundColor' => [
-                    '#ef4444', // SD
-                    '#f97316', // SMP
-                    '#eab308', // SMA/SMK
-                    '#22c55e', // D3
-                    '#06b6d4', // S1
-                    '#3b82f6', // S2
-                    '#8b5cf6', // S3
+                    '#ff0000', // SD
+                    '#ff6a00', // SMP
+                    '#febf00', // SMA/SMK
+                    '#00ff5e', // D3
+                    '#00d9ff', // S1
+                    '#0062ff', // S2
+                    '#9a6eff', // S3
                 ],
+                'radius' => 150,
             ]],
             'labels' => $jenjang,
         ];
