@@ -9,8 +9,16 @@ use Illuminate\Database\Eloquent\Model;
 class Pegawai extends Model
 {
     protected $fillable = [
-        'nip', 'nama', 'jenis_kelamin', 'tempat_lahir', 'tanggal_lahir',
-        'pendidikan_terakhir', 'jabatan', 'alamat', 'no_telepon', 'email',
+        'nip',
+        'nama',
+        'jenis_kelamin',
+        'tempat_lahir',
+        'tanggal_lahir',
+        'pendidikan_terakhir',
+        'jabatan',
+        'alamat',
+        'no_telepon',
+        'email',
     ];
 
     protected $casts = [
@@ -20,7 +28,7 @@ class Pegawai extends Model
     protected function usia(): Attribute
     {
         return Attribute::make(
-            get: fn () => Carbon::parse($this->tanggal_lahir)->age,
+            get: fn() => Carbon::parse($this->tanggal_lahir)->age,
         );
     }
 }
