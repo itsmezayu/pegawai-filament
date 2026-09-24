@@ -19,19 +19,19 @@ class PegawaiResource extends Resource
 {
     protected static ?string $model = Pegawai::class;
 
-    protected static ?string $modelLabel = 'Pegawai'; // TItle model
+    protected static ?string $modelLabel = 'Data'; // Add Button label
 
-    protected static ?string $pluralModelLabel = 'Data Pegawai'; // Data Pegawai
+    protected static ?string $pluralModelLabel = 'Data Pegawai'; // Model Label
 
-    protected static ?string $navigationLabel = 'Data Pegawai'; // Label menu
+    protected static ?string $navigationLabel = 'Data Pegawai'; // Navigation label
 
-    protected static string|UnitEnum|null $navigationGroup = 'Manajemen'; // Menu Group
+    protected static string|UnitEnum|null $navigationGroup = 'Management'; // Menu Group label
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $recordTitleAttribute = 'pegawai'; // Judul record
+    protected static ?string $recordTitleAttribute = 'pegawai'; // Record title attribute
 
-    public static function getGloballySearchableAttributes(): array // Atribut yang dapat dicari secara global
+    public static function getGloballySearchableAttributes(): array // Global searchable attributes
     {
         return [
             'nama',

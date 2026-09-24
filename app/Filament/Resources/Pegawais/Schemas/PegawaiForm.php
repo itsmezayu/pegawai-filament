@@ -19,7 +19,7 @@ class PegawaiForm
                     ->label('NIP')
                     ->required()
                     ->maxLength(20)
-                    ->unique(), // otomatis mengabaikan record yang sedang diedit di Filament v4
+                    ->unique(), // Unique NIP
 
                 TextInput::make('nama')
                     ->label('Nama Lengkap')

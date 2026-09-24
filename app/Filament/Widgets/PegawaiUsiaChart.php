@@ -11,7 +11,7 @@ class PegawaiUsiaChart extends ChartWidget
     protected ?string $heading = 'Range Usia Pegawai';
 
     protected static ?int $sort = 2; // urutan widget di dashboard
-    protected int|string|array $columnSpan = '1'; // lebar di dashboard
+    protected int|string|array $columnSpan = '1'; // lebar widget di dashboard
 
 
     protected function getData(): array

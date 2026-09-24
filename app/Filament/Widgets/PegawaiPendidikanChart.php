@@ -10,7 +10,7 @@ class PegawaiPendidikanChart extends ChartWidget
     protected ?string $heading = 'Pendidikan Terakhir';
 
     protected static ?int $sort = 3; // urutan widget di dashboard
-    protected int | string | array $columnSpan = 1; // lebar di dashboard
+    protected int | string | array $columnSpan = 1; // lebar widget di dashboard
 
 
     protected function getData(): array

@@ -10,7 +10,7 @@ class PegawaiGenderChart extends ChartWidget
     protected ?string $heading = 'Perbandingan Jenis Kelamin';
 
     protected static ?int $sort = 1; // urutan widget di dashboard
-    protected int|string|array $columnSpan = '1'; // lebar di dashboard
+    protected int|string|array $columnSpan = '1'; // lebar widget di dashboard
 
 
     protected function getData(): array
